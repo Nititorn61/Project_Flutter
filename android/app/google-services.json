@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1042195251774",
+    "firebase_url": "https://carokay-3a57e-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "carokay-3a57e",
+    "storage_bucket": "carokay-3a57e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1042195251774:android:77dea18dfd354b99ae876f",
+        "android_client_info": {
+          "package_name": "com.example.car_okay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1042195251774-gu4bc6lqeau3frsb2jpn7jj525ve5566.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.car_okay",
+            "certificate_hash": "3b6a7880bbe45951fc71de292894d921fb199376"
+          }
+        },
+        {
+          "client_id": "1042195251774-esuef5rotvhl2d36f9v9mf76529302pr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBF73SdKv4zx7Fh04VVAr3_r46GB3LSVoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1042195251774-esuef5rotvhl2d36f9v9mf76529302pr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1042195251774-1i7brfnkom1plp3gj3uopr647mc91ob1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.carWash.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

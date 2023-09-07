@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "firebase-admin": "^11.10.1",
+    "xlsx": "^0.18.5"
+  }
+}
