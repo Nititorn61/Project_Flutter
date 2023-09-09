@@ -116,6 +116,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
               hintText: "เบอร์โทรศัพท์",
               controller: phoneNumber,
               keyboardType: TextInputType.number,
+              maxLength: 10,
             ),
             // COTextField(
             //   label: "Email",

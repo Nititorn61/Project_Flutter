@@ -18,6 +18,7 @@ class COTextField extends StatelessWidget {
   final void Function()? onPressedClear;
   final bool enabled;
   final TextInputType keyboardType;
+  final int? maxLength;
 
   const COTextField({
     super.key,
@@ -34,6 +35,7 @@ class COTextField extends StatelessWidget {
     this.maxLines = 1,
     this.enabled = true,
     this.keyboardType = TextInputType.text,
+    this.maxLength,
   });
 
   @override
@@ -46,6 +48,7 @@ class COTextField extends StatelessWidget {
         TextField(
           decoration: InputDecoration(
             enabled: enabled,
+            counterText: "",
             isDense: true,
             suffixIcon: isHaveClearText
                 ? controller!.text.isNotEmpty
@@ -88,6 +91,7 @@ class COTextField extends StatelessWidget {
           onChanged: onChanged,
           onTap: isObscureText ? null : onPressed,
           readOnly: onPressed != null,
+          maxLength: maxLength,
         ),
       ],
     );

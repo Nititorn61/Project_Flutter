@@ -202,6 +202,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   hintText: "เบอร์โทรศัพท์",
                   controller: phoneNumber,
                   keyboardType: TextInputType.number,
+                  maxLength: 10,
                 ),
                 COTextField(
                   label: "Email",
