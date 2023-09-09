@@ -217,7 +217,7 @@ class CODialog {
                       ),
                       const COPadding(width: 1),
                       COText(
-                        total.toString(),
+                        total.toStringAsFixed(2),
                         bold: true,
                       )
                     ],
