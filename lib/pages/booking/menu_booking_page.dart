@@ -138,15 +138,18 @@ class _MenuBookingPageState extends State<MenuBookingPage> {
 
       if (DateTime.parse(date.text).difference(currentDate).inSeconds <= 0) {
         isSelectAble = verifyTime(timeStringList[index]);
-        if (isSelectAble) {
-          isSelectAble = !bookingModel!.reserved.contains(index);
-        }
       }
-      bookingList.add(BookingTableModel(
+      if (isSelectAble) {
+        isSelectAble = !bookingModel!.reserved.contains(index);
+      }
+      bookingList.add(
+        BookingTableModel(
           index: index,
           time: timeStringList[index],
           isSelectAble: isSelectAble,
-          isShow: isShow));
+          isShow: isShow,
+        ),
+      );
     }
     setState(() {});
   }

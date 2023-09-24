@@ -47,12 +47,12 @@ Future<void> firebaseUpdateBooking(
   DocumentReference docRef = bookingRef.doc(id);
   await docRef.set(
     BookingModel(
-            id: id,
-            storeId: storeId,
-            date: date,
-            slot: slot,
-            reserved: reserved)
-        .toJson(),
+      id: id,
+      storeId: storeId,
+      date: date,
+      slot: slot,
+      reserved: reserved,
+    ).toJson(),
     SetOptions(merge: true),
   );
 }
@@ -106,9 +106,22 @@ Future<void> firebaseRemoveOtherBooking(
   );
 
   DocumentReference docRef = bookingRef.doc(bookingId);
-  await docRef.update({
-    'reserved': FieldValue.arrayUnion(reserved),
-  });
+  BookingModel doc = (await docRef
+          .withConverter(
+            fromFirestore: (snapshot, _) =>
+                BookingModel.fromJson({"id": snapshot.id, ...snapshot.data()!}),
+            toFirestore: (bookings, _) => bookings.toJson(),
+          )
+          .get())
+      .data()!;
+
+  if (doc.reserved.isEmpty) {
+    await docRef.set({'reserved': reserved}, SetOptions(merge: true));
+  } else {
+    await docRef.update({
+      'reserved': FieldValue.arrayUnion(reserved),
+    });
+  }
 }
 
 Future<void> firebaseRemoveReservedTime(
